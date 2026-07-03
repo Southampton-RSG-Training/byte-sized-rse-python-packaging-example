@@ -24,6 +24,6 @@ jobs:
       - name: Run Tests
         env:
           # disable progress bar when running tests
-          TQDM_DISABLE=1
+          TQDM_DISABLE: 1
         run: |
           python -m unittest discover -v tests
