@@ -3,11 +3,11 @@
 from concurrent.futures import ThreadPoolExecutor
 
 import toga
+from PIL.Image import Image
 from toga.constants import COLUMN
 from toga.sources import ListSource
-from PIL.Image import Image
 
-from .classifiers import get_classifier, default_registry
+from .classifiers import default_registry, get_classifier
 from .util import get_devices
 
 IMAGE_FILE_TYPES = ["jpg", "jpeg", "png"]

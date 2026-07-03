@@ -64,9 +64,7 @@ class TorchvisionClassifierFactory(ClassifierFactory):
 
     def __call__(self, device: str = "cpu"):
         if self.classifier is None:
-            weights = torchvision.models.get_model_weights(self.model_name)[
-                "DEFAULT"
-            ]
+            weights = torchvision.models.get_model_weights(self.model_name)["DEFAULT"]
             model = torchvision.models.get_model(
                 self.model_name,
                 weights=weights,

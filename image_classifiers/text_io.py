@@ -4,7 +4,6 @@ from collections.abc import Iterable
 from pathlib import Path
 
 from PIL.Image import Image
-from rich.console import Console
 from rich.table import Table
 from rich_pixels import Pixels
 

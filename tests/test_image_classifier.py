@@ -1,10 +1,10 @@
-from unittest import TestCase, skipUnless
 from pathlib import Path
+from unittest import skipUnless, TestCase
 
 import numpy as np
-from PIL import Image
 import torch
 import torchvision.models
+from PIL import Image
 
 from image_classifiers.image_classifier import ImageClassifier
 

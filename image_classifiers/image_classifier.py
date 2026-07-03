@@ -5,8 +5,8 @@ from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from typing import Any
 
-import torch
 import numpy as np
+import torch
 
 
 @dataclass

@@ -17,7 +17,7 @@ To run the code as it currently stands, you will need to create a Python virtual
     $ python3 -m venv venv
     $ source ./venv/bin/activity
     (venv) $ pip install -U pip
-    (venv) $ pip install numpy pillow torch torchvision
+    (venv) $ pip install numpy pillow torch torchvision tqdm
 
 If you want to run the command-line tool you should also install::
 

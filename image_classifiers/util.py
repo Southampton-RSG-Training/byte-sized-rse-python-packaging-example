@@ -12,9 +12,7 @@ def get_devices():
     devices = ["cpu"]
     try:
         if torch.cuda.is_available():
-            devices.extend(
-                [f"cuda:{i}" for i in range(torch.cuda.device_count())]
-            )
+            devices.extend([f"cuda:{i}" for i in range(torch.cuda.device_count())])
     except Exception:
         # cuda not available
         logger.exception("Cuda not available")

@@ -6,7 +6,7 @@ import click
 from PIL import Image
 from rich.console import Console
 
-from .classifiers import get_classifier, default_registry
+from .classifiers import default_registry, get_classifier
 from .text_io import image_table
 from .util import get_devices
 
