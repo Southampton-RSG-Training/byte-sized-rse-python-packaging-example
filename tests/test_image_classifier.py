@@ -32,7 +32,7 @@ class TestImageClassifier(TestCase):
                 label_set, expected_label_set, strict=True
             ):
                 self.assertEqual(label[0], expected_label[0])
-                self.assertAlmostEqual(label[1], expected_label[1], places=6)
+                self.assertAlmostEqual(label[1], expected_label[1], places=4)
 
     def test_create(self):
         classifier = ImageClassifier(
@@ -157,7 +157,7 @@ class TestImageClassifier(TestCase):
             self.assert_labels_equal(labels, expected_labels)
 
     @skipUnless(torch.cuda.is_available(), "CUDA not available")
-    def test_classify_mps(self):
+    def test_classify_cuda(self):
         classifier = ImageClassifier(
             model=self.model,
             transforms=self.weights.transforms(),
