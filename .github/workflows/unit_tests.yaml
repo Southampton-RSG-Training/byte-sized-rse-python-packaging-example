@@ -20,7 +20,10 @@ jobs:
       - name: Install dependencies
         run: |
            pip install -U pip
-           pip install numpy pillow torch 'torchvision >= 0.13'
+           pip install numpy pillow torch 'torchvision >= 0.13' tqdm
       - name: Run Tests
+        env:
+          # disable progress bar when running tests
+          TQDM_DISABLE=1
         run: |
-           python -m unittest discover -v tests
+          python -m unittest discover -v tests
