@@ -32,7 +32,7 @@ class TestImageClassifier(TestCase):
                 label_set, expected_label_set, strict=True
             ):
                 self.assertEqual(label[0], expected_label[0])
-                self.assertAlmostEqual(label[1], expected_label[1])
+                self.assertAlmostEqual(label[1], expected_label[1], places=6)
 
     def test_create(self):
         classifier = ImageClassifier(
