@@ -4,7 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 import toga
 from PIL.Image import Image
-from toga.constants import COLUMN
+from toga.constants import COLUMN  # type: ignore[attr-defined]
 from toga.sources import ListSource
 
 from .classifiers import default_registry, get_classifier
