@@ -22,11 +22,19 @@ class ImageClassifier:
     #: An array of human-readable labels
     labels: np.typing.NDArray[np.str_]
 
-    #: The device to sue when performing computations
-    device: str = "cpu"
+    #: The device to use when performing computations
+    device: str
 
     #: If the classifier returns logits then softmax is needed to get probabilities.
     needs_softmax: bool = True
+
+    def __setattr__(self, name, value):
+        # when setting the device, update the model device
+        if name == "device" and hasattr(self, "model"):
+            self.model.to(value)
+        if name == "model" and hasattr(self, "device"):
+            value.to(self.device)
+        super().__setattr__(name, value)
 
     def preprocess(self, images: Iterable[Any]) -> torch.Tensor:
         """Preprocess a collection of images to be suitable for the model.

@@ -78,6 +78,8 @@ class TorchvisionClassifierFactory(ClassifierFactory):
                 device=device,
                 labels=labels,
             )
+        else:
+            self.classifier.device = device
         return self.classifier
 
     @classmethod
