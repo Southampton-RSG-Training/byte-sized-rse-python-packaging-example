@@ -180,11 +180,11 @@ class ImageClassificationApp(toga.App):
 
 
 def main():
-    return ImageClassificationApp(
+    ImageClassificationApp(
         "Image Classifier",
         "uk.ac.soton.srsg_training",
-    )
+    ).main_loop()
 
 
 if __name__ == "__main__":
-    main().main_loop()
+    main()
